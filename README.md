@@ -1,6 +1,6 @@
 # HappyBurger
 
-This work is an updating dynamic website to let users to leave a product reviews. More details about implemented features read [here](#implemented_functionality).
+This work is an updating dynamic website to let users to leave a product reviews. More details about implemented features read [here](#implemented-functionality).
 
 ## Getting Started
 
