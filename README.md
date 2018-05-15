@@ -23,6 +23,8 @@ Database Name: happyburger
 
 * Clone this repo on your local server
 
+* Import SQL DB from dump file HappyBurger_dump.sql
+
 * Run web-server and MySQL using MAMP
 
 * Congrats! Good Job! Now you're all set and good to go.
