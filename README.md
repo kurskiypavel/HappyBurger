@@ -1,6 +1,12 @@
-# HappyBurger(#some-markdown-heading)
+# HappyBurger
 
-This work is an updating dynamic website to let users to leave a product reviews. More details about implemented features read [here](http://www.dropwizard.io/1.0.2/docs/).
+This work is an updating dynamic website to let users to leave a product reviews. More details about implemented features read [Go to Real Cool Heading section](#real-cool-heading)  
+  
+  
+  
+  
+  
+#Real Cool Heading.
 The project was launched to demonstrate the possibilities of integration frontend and backend languages with different frameworks. Work on the project is ongoing. Check out changes and new features of the project every week!
 
 ## Getting Started
