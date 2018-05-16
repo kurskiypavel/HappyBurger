@@ -104,7 +104,6 @@ if (isset($_POST['delete']) && isset($_POST['review_id'])) {
                     <textarea id="icon_prefix2" class="materialize-textarea textarea1 validate" name="review"></textarea>
                     <label for="icon_prefix2">How was your experience?</label>
                     <p class="range-field">
-                        <i class="material-icons prefix teal-text">star</i>
                         <label for="rating">Rate the product!</label>
                         <input type="range" id="test5" min="0" max="100" name="rating"/>
                     </p>
@@ -168,7 +167,7 @@ _END;
                     } else {
                         echo '<i class="material-icons prefix circle" id="avatar">face</i>';
                     }
-                    echo '<span class="title">' . $obj->username . '</span><p>' . $obj->review_date . '</p>';
+                    echo '<span class="title">' . $obj->username . '</span><p class="reviewDate">' . $obj->review_date . '</p>';
                     echo '<p>' . $obj->review . '</p>';
                     echo '<a href="" class="secondary-content">
                             <p>' . $obj->review_rating . '</p>';
@@ -201,6 +200,8 @@ _END;
 
 <!-- close connection -->
 <?php $mysqli->close(); ?>
+
+
 </body>
 
 </html>

@@ -162,3 +162,12 @@ $(document).ready(function () {
     }
 
 
+//Format review date output from now on Page:product.php Field:product review element
+//grab review date
+var reviewDate = document.getElementsByClassName("reviewDate");
+for (let i = 0; i < reviewDate.length; i++) {
+    //format rule
+    let momentReviewDate = moment(reviewDate[i].innerHTML, "YYYYMMDD").fromNow();
+    //output the result on page
+    reviewDate[i].innerHTML= momentReviewDate;
+}
