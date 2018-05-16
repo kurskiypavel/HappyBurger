@@ -2,6 +2,8 @@
 
 This work is an updating dynamic website to let users to leave a product reviews. More details about implemented features read [here](#implemented-functionality).
 
+![](https://i.imgflip.com/2aewh5.gif)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
