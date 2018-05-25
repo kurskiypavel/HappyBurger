@@ -12,12 +12,12 @@ $username = $_SESSION['username'];
 <head>
     <meta charset="UTF-8">
     <title>Products</title>
-    <?php include_once "head_sources.php"?>
+    <?php require_once "head_sources.php"?>
 </head>
 
 <body>
 <div class="container">
-    <?php include "header.php"?>
+    <?php require_once "header.php"?>
     <div class="row">
         <?php
         $query = "SELECT * FROM products";

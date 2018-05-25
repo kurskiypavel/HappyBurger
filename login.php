@@ -76,11 +76,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <?php include_once "head_sources.php"?>
+    <?php require_once "head_sources.php"?>
 </head>
 <body>
 <div class="container">
-    <?php include_once "header.php" ?>
+    <?php require_once "header.php" ?>
 </div>
 <div class="container">
     <div class="row">

@@ -10,12 +10,12 @@ $user_id = $_SESSION['user_id'];
 <head>
     <meta charset="UTF-8">
     <title>HOME</title>
-    <?php include_once "head_sources.php"?>
+    <?php require_once "head_sources.php"?>
 </head>
 
 <body>
 <div class="container">
-    <?php include_once "header.php"?>
+    <?php require_once "header.php"?>
 </div>
 <!-- slider -->
 <img src="images/main slider.png" alt="IMAGE GOES HERE">

@@ -127,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["save"])) {
 <head>
     <meta charset="UTF-8">
     <title>Profile</title>
-    <?php include_once "head_sources.php" ?>
+    <?php require_once "head_sources.php" ?>
 </head>
 
 <body>
@@ -139,7 +139,7 @@ if (!$username) {
 }
 ?>
 <div class="container">
-    <?php include_once "header.php" ?>
+    <?php require_once "header.php" ?>
     <div class="row profileRow">
         <div class="col s12">
             <!--User name-->
@@ -158,7 +158,8 @@ if (!$username) {
                 }
                 ?>
 
-                <form method='post' action='user.php' enctype='multipart/form-data'>
+<!--                <form method='post' action='user.php' enctype='multipart/form-data'>-->
+                <form method='post' action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>' enctype='multipart/form-data'>
                     <div class="file-field input-field">
                         <div class="btn">
                             <!--upload new image to the server-->

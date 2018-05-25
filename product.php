@@ -8,8 +8,19 @@ $username = $_SESSION['username'];
 $user_id = $_SESSION['user_id'];
 $id = $_GET['id'];
 
+
+
+
+/*  FUNCTIONS DECLARE   */
+
 // Processing form data when form - review is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['review'])) {
+function newReview()
+{
+    global $username;
+    global $user_id;
+    global $id;
+    global $mysqli;
+
     //check if user is logged in before posting
     if ($username) {
         $id = $_GET['id'];
@@ -19,11 +30,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['review'])) {
         $sql_new_review = "INSERT INTO reviews VALUES" . "(NULL, '$id', '$user_id', '$review', '$created_at','$rating')";
         $mysqli->query($sql_new_review);
     }
+
 }
 
-
 //  Delete review
-if (isset($_POST['delete']) && isset($_POST['review_id'])) {
+function deleteReview()
+{
+    global $mysqli;
+
     $review_id = $_POST['review_id'];
     $sql_delete_review = "DELETE FROM reviews WHERE review_id='$review_id'";
 //    get result of delete action
@@ -31,6 +45,20 @@ if (isset($_POST['delete']) && isset($_POST['review_id'])) {
     if (!$result) echo "DELETE failed: $sql_delete_review<br>" .
         $mysqli->error . "<br><br>";
 }
+
+
+/*  POST ACTIONS    */
+//New review
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['review']) && isset($_POST['new_review'])) {
+    newReview();
+}
+
+//Delete review
+if (isset($_POST['delete']) && isset($_POST['review_id'])) {
+    deleteReview();
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,12 +66,12 @@ if (isset($_POST['delete']) && isset($_POST['review_id'])) {
 <head>
     <meta charset="UTF-8">
     <title>Work</title>
-    <?php include_once "head_sources.php" ?>
+    <?php require_once "head_sources.php" ?>
 </head>
 
 <body>
 <div class="container">
-    <?php include_once "header.php" ?>
+    <?php require_once "header.php" ?>
     <!--product content-->
     <div class="row">
         <?php
@@ -101,7 +129,8 @@ if (isset($_POST['delete']) && isset($_POST['review_id'])) {
             <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix teal-text">mode_edit</i>
-                    <textarea id="icon_prefix2" class="materialize-textarea textarea1 validate" name="review"></textarea>
+                    <textarea id="icon_prefix2" class="materialize-textarea textarea1 validate"
+                              name="review"></textarea>
                     <label for="icon_prefix2">How was your experience?</label>
                     <p class="range-field">
                         <label for="rating">Rate the product!</label>
@@ -122,22 +151,22 @@ if (isset($_POST['delete']) && isset($_POST['review_id'])) {
                 </div>
             </div>
 
-                <?php if (!$username) {
-                    echo <<<_END
+            <?php if (!$username) {
+                echo <<<_END
             <!-- Modal Trigger -->
             <a class="waves-effect waves-light btn modal-trigger" href="#modal1">send
                 <i class="material-icons right" > send</i>
             </a>
 _END;
-                } else {
-                    echo <<<_END
+            } else {
+                echo <<<_END
             <!-- Submit new review btn -->
             <button class="btn waves-effect waves-light reviewBtn" type = "submit"
                     name = "new_review" > send
                 <i class="material-icons right" > send</i>
             </button>
 _END;
-                } ?>
+            } ?>
 
 
         </form>
